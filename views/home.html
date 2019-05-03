@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<title>Home</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+
+<style type="text/css">
+	h1 {
+		margin: 2rem;
+	}
+
+	a:hover {
+		color: #6c757d;
+	}
+
+	.spinner-border {
+		animation-duration: 0.8s;
+		display: none;
+		margin-top: 3rem;
+	}
+
+	.btn {
+		display: block;
+		margin: 6rem;
+	}
+</style>
+
+
+<body>
+	<center>
+		<h1>Credit Card Fraud Detection</h1>
+
+		<h5>Please click the following buttons in the presented order</h5>
+
+		<div class="spinner-border" role="status">
+			<span class="sr-only">Loading...</span>
+		</div>
+
+		<button type="button" class="btn btn-secondary btn-lg" id="fetch" onclick="fetch();">
+			Fetch the Test Data
+		</button>
+
+		<button type="button" class="btn btn-secondary btn-lg" id="execute" onclick="execute();">
+			Classify the Test Data instances using the Trained Models
+		</button>
+
+		<a href="/report" onclick="report();">
+			<button type="button" class="btn btn-secondary btn-lg" id="report">
+				Display Report
+			</button>
+		</a>
+	</center>
+</body>
+
+
+<script type="text/javascript">
+
+	var fetchedData = 0, executed = 0;
+
+	function fetch() {
+		let status = $('.spinner-border');
+		status.show();
+		setTimeout(function() {
+			status.css('display', 'none');
+
+			let btn = $('#fetch');
+			btn.html('Fetched the Test Data');
+			btn.attr('disabled', true);
+		}, 1000);
+
+		fetchedData = 1;
+	}
+
+	function execute() {
+		if(fetchedData) {
+			let status = $('.spinner-border');
+			status.show();
+			setTimeout(function() {
+				status.css('display', 'none');
+
+				let btn = $('#execute');
+				btn.html('Classified the Test Data Instances');
+				btn.attr('disabled', true);
+			}, 4000);
+
+			executed = 1;
+		}
+
+		else {
+			alert("The Test data has not been loaded for classification.");
+		}
+	}
+
+	function report() {		
+		if(!fetchedData || !executed) {
+			event.preventDefault();
+			alert("Kindly complete the previous two steps in order to generate a report.");
+		}
+	}
+
+</script>
+
+
+</html>

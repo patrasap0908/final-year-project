@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<title>Results Report</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+
+<style type="text/css">
+	h1 {
+		margin: 2rem;
+	}
+
+	.table {
+		margin: 3rem 0;
+		width: 90%;
+	}
+
+	.btn {
+		display: block;
+		margin: 6rem;
+	}
+</style>
+
+
+<body>
+	<center>
+		<h1>Classification Report</h1>
+
+		<h3>Number of Test Instances = 1,70,589</h3>
+		<h6>( All the accuracies have been approximated to TWO decimal places )</h6>
+
+		<table class="table table-bordered table-hover">
+			<thead class="thead-dark">
+			  	<tr>
+			    	<th scope="col">Classification Algorithm</th>
+			    	<th scope="col">Metric</th>
+			    	<th scope="col">Value</th>
+			  	</tr>
+			</thead>
+
+			<tbody>
+			  	<tr>
+			    	<th scope="row" rowspan="3">Random Forest Classification</th>
+			    	<td>Accuracy</td>
+			    	<td><strong>95.08%</strong></td>
+			  	</tr>
+			  	<tr>
+			    	<td>Precision</td>
+			    	<td>
+			    		Non-Fraudulent - <strong>92%</strong>
+			    		<br><br>
+			    		Farudulent - <strong>98%</strong>
+			    	</td>
+			  	</tr>
+			  	<tr>
+			    	<td>Recall</td>
+			    	<td>
+			    		Non-Fraudulent - <strong>99%</strong>
+			    		<br><br>
+			    		Farudulent - <strong>92%</strong>
+			    	</td>
+			  	</tr>
+
+			    <tr>
+			      	<th scope="row" rowspan="3">Support Vector Machine</th>
+			      	<td>Accuracy</td>
+			      	<td><strong>95.97%</strong></td>
+			    </tr>
+			    <tr>
+			    	<td>Precision</td>
+			    	<td>
+			    		Non-Fraudulent - <strong>94%</strong>
+			    		<br><br>
+			    		Farudulent - <strong>99%</strong>
+			    	</td>
+			  	</tr>
+			  	<tr>
+			    	<td>Recall</td>
+			    	<td>
+			    		Non-Fraudulent - <strong>99%</strong>
+			    		<br><br>
+			    		Farudulent - <strong>93%</strong>
+			    	</td>
+			  	</tr>
+
+			    <tr>
+			    	<th scope="row" rowspan="3">Artificial Neural Network</th>
+			    	<td>Accuracy</td>
+			      	<td><strong>98.55%</strong></td>
+			    </tr>
+			    <tr>
+			    	<td>Precision</td>
+			    	<td>
+			    		Non-Fraudulent - <strong>99%</strong>
+			    		<br><br>
+			    		Farudulent - <strong>98%</strong>
+			    	</td>
+			  	</tr>
+			  	<tr>
+			    	<td>Recall</td>
+			    	<td>
+			    		Non-Fraudulent - <strong>98%</strong>
+			    		<br><br>
+			    		Farudulent - <strong>99%</strong>
+			    	</td>
+			  	</tr>
+		  </tbody>
+		</table>
+
+		<a href="/">
+			<button type="button" class="btn btn-secondary btn-lg" id="home">
+				Back to Home
+			</button>
+		</a>
+	</center>
+</body>
+
+
+</html>
